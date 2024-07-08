@@ -1,10 +1,16 @@
 name: Environment Variables
+env: 
+  WORKSPACE_ENVIRONMENT_VARIABLE: 'Custom workspace environment variable'
 on: [push]
 jobs:
   ubuntu:
+    env: 
+      JOB_ENVIRONMENT_VARIABLE: 'Custom job environment variable'
     runs-on: ubuntu-latest
     steps:
       - name: Print custom environment variables from ubuntu-latest
+        env: 
+          STEP_ENVIRONMENT_VARIABLE: 'Custom step environment variable'
         run: |
           echo "Accessing environment variables in run command"
           echo "$WORKSPACE_ENVIRONMENT_VARIABLE"
